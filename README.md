@@ -4,12 +4,11 @@ Please model the following relationships. We're simulating athletes playing for 
 
 This involves two many-to-many relationships and aliasing. It's representative of what you can expect to see on the Phase 2 assessment. 
 
-+ The models are players, teams, memberships (the join between players and teams), and skills
-+ Each team has multiple players
-+ Each team has one captain 
-+ A player could belong to multiple teams
-+ A player has many skills
-+ A skill can belong to many players
++ The models are doctors, users, appointments, and symptoms. 
++ When a user makes an appointment with the doctor, they become a 'patient' (ex. you should be able to call doctor.patients to see the list of patients a given doctor is seeing.)
++ Appointment is the join table between doctors and patients. 
++ A patient can have many symptoms. 
++ A symptom can belong to many patients.
 
 This page is the canonical source of Active Record association goodness. Would recommend referring to it often: http://guides.rubyonrails.org/association_basics.html
 
