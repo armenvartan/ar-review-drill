@@ -12,3 +12,4 @@ This involves two many-to-many relationships and aliasing. It's representative o
 
 This page is the canonical source of Active Record association goodness. Would recommend referring to it often: http://guides.rubyonrails.org/association_basics.html
 
+Please grab Kai's excellent skeleton for this exercise: https://github.com/kaiprt/Active-Record-Skeleton
