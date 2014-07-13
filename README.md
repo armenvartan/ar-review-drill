@@ -10,3 +10,6 @@ This involves two many-to-many relationships and aliasing. It's representative o
 + A player could belong to multiple teams
 + A player has many skills
 + A skill can belong to many players
+
+This page is the canonical source of Active Record association goodness. Would recommend referring to it often: http://guides.rubyonrails.org/association_basics.html
+
