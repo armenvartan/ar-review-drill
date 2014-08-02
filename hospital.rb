@@ -13,7 +13,21 @@ ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
 # Repeat the above template for each table you need to create
 #
 # end migrations
+ActiveRecord::Migration.create_table :doctors do |t|
 
+end
+
+ActiveRecord::Migration.create_table :users do |t|
+
+end
+
+ActiveRecord::Migration.create_table :appointments do |t|
+
+end
+
+ActiveRecord::Migration.create_table :symptoms do |t|
+
+end
 
 # The following line executes the migrations. Don't delete it!
 ActiveRecord::Migrator.up "db/migrate"
@@ -28,3 +42,19 @@ ActiveRecord::Migrator.up "db/migrate"
 # You can define multiple classes, one after another
 
 # end classes
+
+class Doctor < ActiveRecord::Base
+
+end
+
+class User < ActiveRecord::Base
+
+end
+
+class Appointment < ActiveRecord::Base
+
+end
+
+class Symptom < ActiveRecord::Base
+
+end
