@@ -11,3 +11,13 @@ This involves two many-to-many relationships and aliasing. It's representative o
 + A symptom can belong to many patients.
 
 This page is the canonical source of Active Record association goodness. Would recommend referring to it often: http://guides.rubyonrails.org/association_basics.html
+
+#### Associations to try in irb
+
++ doctor.first.patients
++ User.first.doctors
+
+I'm going to leave it to you to figure out the user and symptoms association. Good luck!  
+
+I wanted to make some tests for you guys. Sorry for not getting to it. If you can get these associations, you're well on your way to being an Active Record pro.  
+I will push my solution for the associations on Monday.
