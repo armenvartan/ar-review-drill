@@ -20,12 +20,16 @@ ActiveRecord::Migration.create_table :users do |t|
 end
 
 ActiveRecord::Migration.create_table :appointments do |t|
+  t.references :doctor
+  t.references :user
 end
 
 ActiveRecord::Migration.create_table :symptoms do |t|
 end
 
 ActiveRecord::Migration.create_table :patient_symptoms do |t|
+  t.references :user
+  t.references :symptom
 end
 
 # The following line executes the migrations. Don't delete it!
@@ -44,7 +48,7 @@ ActiveRecord::Migrator.up "db/migrate"
 
 class Doctor < ActiveRecord::Base
   has_many :appointments
-  has_many :patients, through: :appointments, source: 'User'
+  has_many :patients, through: :appointments, source: :user
 end
 
 class User < ActiveRecord::Base
@@ -61,10 +65,10 @@ end
 
 class Symptom < ActiveRecord::Base
   has_many :patient_symptoms
-  has_many :patients, through: :patient_symptoms
+  has_many :patients, through: :patient_symptoms, source: :user
 end
 
 class PatientSymptom < ActiveRecord::Base
-  belongs_to :patient
+  belongs_to :user
   belongs_to :symptom
 end
