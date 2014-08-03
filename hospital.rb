@@ -14,19 +14,30 @@ ActiveRecord::Base.establish_connection adapter: "sqlite3", database: ":memory:"
 #
 # end migrations
 ActiveRecord::Migration.create_table :doctors do |t|
-
+  has_many :appointments
+  has_many :patients, through: :appointments, source: 'User'
 end
 
 ActiveRecord::Migration.create_table :users do |t|
-
+  has_many :appointments
+  has_many :doctors, through: :appointments
+  has_many :patient_symptoms
+  has_many :symptoms, through: :patient_symptoms
 end
 
 ActiveRecord::Migration.create_table :appointments do |t|
-
+  belongs_to :user
+  belongs_to :doctor
 end
 
 ActiveRecord::Migration.create_table :symptoms do |t|
+  has_many :patient_symptoms
+  has_many :patients, through: :patient_symptoms
+end
 
+ActiveRecord::Migration.create_table :patient_symptoms do |t|
+  belongs_to :patient
+  belongs_to :symptom
 end
 
 # The following line executes the migrations. Don't delete it!
@@ -56,5 +67,9 @@ class Appointment < ActiveRecord::Base
 end
 
 class Symptom < ActiveRecord::Base
+
+end
+
+class PatientSymptom < ActiveRecord::Base
 
 end
