@@ -1,0 +1,10 @@
+class CreateSymptoms < ActiveRecord::Migration
+  def change
+  	create_table :symptoms do |t|
+  		t.string :ailment
+  		t.references :user
+
+  		t.timestamps
+  	end
+  end
+end
